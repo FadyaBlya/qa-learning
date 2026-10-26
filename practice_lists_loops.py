@@ -3,12 +3,12 @@
 # 1. Сколько значений времени меньше 1 секунды
 times = [0.5, 1.2, 0.8, 2.0]
 
-count = 0
+count = 0 # счётчик создаём до цикла, иначе он обнулялся бы на каждом проходе
 
 for response_time in times:
     if response_time < 1:
         count += 1
-print(f"Значений < 1: {count}")
+print(f"Значений < 1: {count}") # без отступа: итог выводим один раз, после цикла
 
 
 # 2. Ответы, у которых статус не равен 200
@@ -21,5 +21,6 @@ responses = [
 ]
 
 for response_item in responses:
+    # response_item - весь словарь, поэтому сравниваем поле ["status"], а не сам словарь
     if response_item["status"] != 200:
-        print(response_item["status"])
+        print(response_item["status"]) # внутри if: выводится для каждого подходящего ответа
